@@ -1,4 +1,4 @@
-# Name Unredactor using MultinomialNB
+# Unredactor
 
 ## Project Overview
 
@@ -16,7 +16,7 @@ To set up the environment and run the project, follow these steps:
    pipenv shell
    ```
 
-   This will install all the necessary packages, including:
+   The following are the necessary packages:
 
    - `pandas`, `numpy` - Data handling and numerical operations
    - `scikit-learn` - Machine learning tools
@@ -111,21 +111,27 @@ The evaluation results show precision, recall, and F1-score for the model. These
 To run the script, use the following command line interface:
 
 ```bash
-python unredactor.py <train_file> <test_file>
+python unredactor.py <train_file> <test_file> <submission_file>
 ```
 
 Where:
 - `train_file` is the path to the training dataset file (e.g., `unredactor.tsv`).
-- `test_file` is the path to the test dataset file (e.g., `test_dataset.tsv`).
+- `test_file` is the path to the test dataset file (e.g., `test.tsv`).
 
 
 ## Known Bugs and Limitations
 
-- **Accuracy Issues:** The model's performance, particularly in terms of precision and recall, may not be optimal due to the rarity of certain names in the dataset. As a result, the classifier may struggle to develop a strong confidence level for each individual name, leading to low precision and recall scores.
+- **Accuracy Issues:** The model's performance, particularly in terms of precision and recall, may not be optimal due to the rarity of names in the dataset. As a result, the classifier may struggle to develop a strong confidence level for each individual name, leading to low precision and recall scores.
   
-## Future Work
+## Key Assumptions
 
-- **Data Augmentation:** Increasing the dataset size and including more diverse examples of names may improve the model's performance.
-- **Model Optimization:** Experimenting with different machine learning models or adjusting the pipeline could lead to better results.
-- **Additional Features:** Adding more complex features, such as contextual embeddings or character-level sequence models, could further improve the model's accuracy.
+- **Named Entity Recognition Accuracy:**  
+   The `spaCy` library accurately identifies and labels person names as named entities during preprocessing without significant false positives or negatives.
+
+- **Feature Relevance:**  
+   The extracted features (e.g., n-grams, token counts, lexical diversity) are sufficient to differentiate between redacted names and other possible redactions or placeholders.
+
+- **Static Dataset Format:**  
+   The structure and format of the training and testing datasets remain consistent, ensuring that the model can process and analyze the data without additional preprocessing modifications.
+
 
