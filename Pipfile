@@ -11,6 +11,7 @@ joblib = "*"
 numpy = "*"
 cython = "*"
 spacy = "==3.7.2"
+pytest = "*"
 
 [dev-packages]
 
