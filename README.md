@@ -118,6 +118,12 @@ Where:
 - `train_file` is the path to the training dataset file (e.g., `unredactor.tsv`).
 - `test_file` is the path to the test dataset file (e.g., `test.tsv`).
 
+### Test Case Files
+1. **`test_extract_features_basic`**: Validates feature extraction for a simple text with one redaction.  
+2. **`test_extract_features_empty`**: Ensures all features return zero for an empty input string.  
+3. **`test_extract_features_special_characters`**: Confirms the correct handling of special characters and redactions in text.  
+4. **`test_create_pipeline`**: Verifies the structure and components of the machine learning pipeline.  
+
 
 ## Known Bugs and Limitations
 
